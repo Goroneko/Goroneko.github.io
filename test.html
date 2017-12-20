@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="test.css">
+  <title>
+    実験なう
+  </title>
+</head>
+<body>
+  <table>
+    <tr>
+      <td>
+        <a class="twitter-timeline"
+          href="https://twitter.com/hashtag/%E3%82%A2%E3%82%BA%E3%83%BC%E3%83%AB%E3%83%AC%E3%83%BC%E3%83%B3"
+          data-width="300"
+          data-height="600"
+          data-widget-id="915389257291767809">#アズールレーン のツイート
+        </a>
+        <script>
+        !function(d,s,id){
+          var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+          if(!d.getElementById(id)){
+            js=d.createElement(s);
+            js.id=id;
+            js.src=p+"://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js,fjs);
+          }
+        }(document,"script","twitter-wjs");
+        </script>
+      </td>
+      <td>
+        <!-- <div class="relative"> -->
+          <!-- <img src="kcct1.png" alt="" width="2000" /> -->
+          <!-- <img src="point.png" alt="" class="absolute" /> -->
+        <!-- </div> -->
+        <img src="https://maps.googleapis.com/maps/api/staticmap?center=34.678587,135.067224&zoom=18&size=600x600&maptype=roadmap
+        &markers=color:blue%7Clabel:S%7C40.702147,-74.015794
+        &markers=color:green%7Clabel:G%7C40.711614,-74.012318
+        &markers=color:red%7Clabel:C%7C40.718217,-73.998284
+        &key=AIzaSyDsw1JyPGIS6EJrE-Hf6HMNcIArfnp4f0Q">
+      </td>
+    </tr>
+    <tr>
+
+      <script type="text/javascript" srv="jquery-3.2.1.min.js">
+        $(document).ready(function () {
+          $.getJSON("data.json", function(data){
+            for(var i in data){
+              $("#output").append("<li><strong>" + data[i].division + "</strong></li>");
+              for(var j in data[i].person){
+                $("#output").append("<li>" + data[i].person[j].name + "（" + data[i].person[j].age + "才）</li>n");
+              }
+            }
+          });
+        });
+      </script>
+    </tr>
+  </table>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>JavascriptからPythonにGETで送ってJSONPで帰ってみる</title>
+<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+  function callback(json) {
+    $("#result").html("答えは "+json.answer);
+  }
+
+  function send() {
+    var s = document.createElement('script');
+    a = document.form1.a.value;
+    b = document.form1.b.value;
+    param = "?a="+a+"&b="+b
+    s.src = 'jsonp.py'+param;
+    document.body.appendChild(s);
+    return false;
+  }
+</script>
+</head>
+<body>
+<form name="form1" onsubmit="return send()">
+  <input type="text" name="a" value="1"> +
+  <input type="text" name="b" value="2">
+  <input type="submit" value="計算" />
+</form>
+<div id="result">計算結果</div>
+</body>
+</html>

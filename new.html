@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <title>hogehoge</title>
+<meta charset="UTF-8" />
+<script src="jquery-3.2.1.min.js"></script>
+<script src="data.js"></script>
+<script>
+$(function() {
+  $.getJSON("data.json" , function(data) {
+    var
+      ulObj = $("#demo"),
+      len = data.length;
+
+    for(var i = 0; i < len; i++) {
+      ulObj.append($("<li>").attr({"id":data[i].id}).text(data[i].name));
+    }
+  });
+});
+// $(function() {
+//   console.log(data);
+//   $("#display").text(data[1].name);
+// });
+</script>
+</head>
+<body>
+<p id="display"></p>
+<ul id="demo"></ul>
+</body>
+</html>
